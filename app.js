@@ -6,7 +6,14 @@ const minutesElement = document.querySelector('#minutes')
 const secondsElement = document.querySelector('#seconds')
 const nextYearElement = document.querySelector('#year')
 nextYearElement.textContent = nextYear;
+const countdownContainer = document.querySelector('#countdown')
 
+const insertCountdownValues = ({ days, hours, minutes, seconds }) => {
+    daysElement.textContent = days < 10 ? `0'${days}` : days;
+    hoursElement.textContent = hours < 10 ? `0${hours}` : hours;
+    minutesElement.textContent = minutes < 10 ? `0${minutes}` : minutes;
+    secondsElement.textContent = seconds < 10 ? `0${seconds}` : seconds;
+}
 
 const updateCountdown = () => {
     const currentTime = new Date();
@@ -16,12 +23,8 @@ const updateCountdown = () => {
     const minutes = Math.floor(difference / 1000 / 60) % 60;
     const seconds = Math.floor(difference / 1000) % 60;
 
-    daysElement.textContent = days < 10 ? `0'${days}` : days;
-    hoursElement.textContent = hours < 10 ? `0${hours}` : hours;
-    minutesElement.textContent = minutes < 10 ? `0${minutes}` : minutes;
-    secondsElement.textContent = seconds < 10 ? `0${seconds}` : seconds;
-    nextYearElement.textContent = nextYear;
+    insertCountdownValues({ days, hours, minutes, seconds });
     
 }
-
+setTimeout(() => {countdownContainer.style.display = 'flex';}, 1000)
 setInterval(()=> {updateCountdown()}, 1000);
