@@ -5,9 +5,8 @@
 }
 
 body {
-  background-image: url('./img/2024_img.jpg');
-  /*Foto de Miguel Acosta // Editada por mim(vai ficar 2024, não vou editar novamente :) ) // 
-  link: https://www.pexels.com/pt-br/foto/foto-de-fogos-de-artificio-durante-a-noite-1259614/ */
+  background-image: url("./img/pexels-annalouise-1387577.jpg");
+  /* Foto de Anna-Louise */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
