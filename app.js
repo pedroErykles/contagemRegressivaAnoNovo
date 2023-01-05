@@ -8,11 +8,13 @@ const nextYearElement = document.querySelector('#year')
 nextYearElement.textContent = nextYear;
 const countdownContainer = document.querySelector('#countdown')
 
+const getTimeUnit = unit => unit < 10 ? `0${unit}` : unit;
+
 const insertCountdownValues = ({ days, hours, minutes, seconds }) => {
-    daysElement.textContent = days < 10 ? `0'${days}` : days;
-    hoursElement.textContent = hours < 10 ? `0${hours}` : hours;
-    minutesElement.textContent = minutes < 10 ? `0${minutes}` : minutes;
-    secondsElement.textContent = seconds < 10 ? `0${seconds}` : seconds;
+    daysElement.textContent = getTimeUnit(days);
+    hoursElement.textContent = getTimeUnit(hours);
+    minutesElement.textContent = getTimeUnit(minutes);
+    secondsElement.textContent = getTimeUnit(seconds);
 }
 
 const updateCountdown = () => {
